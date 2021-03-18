@@ -1,0 +1,7 @@
+# Project exclude paths
+/Cookie/target/
+/request/target/
+/response-document/target/
+/servlet-01/target/
+/servlet-02/target/
+/Session/target/

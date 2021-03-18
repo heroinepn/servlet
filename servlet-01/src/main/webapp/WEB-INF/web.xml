@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+    <!-- tomcat自带的两个servlet，位置在tomcat根目录/conf/web.xml里面，把其中的映射粘贴过来-->
+
+    The mapping for the default servlet
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+     The mappings for the JSP servlet
+
+
+    <!--tomcat自带web.xml中的欢迎页，直接粘贴过来-->
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--注册servlet-->
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.pn.servlet.HelloServlet</servlet-class>
+    </servlet>
+<!--servlet的请求路径-->
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+<!--默认请求路径/*-->
+<!--可以自定义后缀请求映射*.pn *前面不能项目映射路径/-->
+    </servlet-mapping>
+<!--    404-->
+    <servlet>
+        <servlet-name>error</servlet-name>
+        <servlet-class>com.pn.servlet.ErrorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>error</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
